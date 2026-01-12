@@ -10,10 +10,12 @@ int	main()
 	{
 		std::cout << "Enter your command: ";
 		if (!(std::getline(std::cin, cmnd)))
-			break ;
+			std::cout << "Error: The command doesn't be empty!" <<std::endl;
 		if (cmnd.compare("ADD") == 0)
 		{
-			std::string first, last, nick, phone;
+			std::string first, last, nick;
+			char *phonestr = NULL;
+			int phone;
 
 			std::cout << "Enter your information : "<< std::endl;
 			std::cout << "First name : ";
@@ -26,9 +28,10 @@ int	main()
 			if (!(std::getline(std::cin, nick)))
 				break;
 			std::cout << "Phone number : ";
-			if (!(std::getline(std::cin, phone)))
+			if (!(std::cin >> phonestr))
 				break;
 			std::cout << std::endl;
+			phone = atoi(phonestr);
 			phonebook.add_to_list(i++, first, last, nick, phone);
 		}
 		else if (cmnd.compare("SEARCH") == 0)

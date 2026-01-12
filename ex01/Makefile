@@ -3,7 +3,7 @@ CXX = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = Phonebook.cpp main.cpp
+SRC = Phonebook.cpp  Contact.cpp main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -12,7 +12,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@$(CXX) $(CPPFLAGS)  $(OBJ) -o $(NAME)
 
-%.o: %.cpp Phonebook.hpp
+%.o: %.cpp Phonebook.hpp Contact.hpp
 	@$(CXX) $(CPPFLAGS) -c $< -o $@
 
 clean:
