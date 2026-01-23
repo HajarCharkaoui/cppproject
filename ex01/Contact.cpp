@@ -15,7 +15,7 @@ std::string Contact::getNickname()
 	return nickname;
 }
 
-int Contact::getPhonenumber()
+std::string Contact::getPhonenumber()
 {
 	return phonenumber;
 }
@@ -37,8 +37,22 @@ void Contact::setNickname(std::string Nname)
 {
 	nickname = Nname;
 }
-void Contact::setPhonenumber(int phone)
+
+bool isnumeric(std::string str)
 {
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (!isdigit(str[i]))
+			return false;
+	}
+	return true;
+}
+void Contact::setPhonenumber(std::string phone)
+{
+	if (phone.length() == 0)
+		std::cout << "empty fieled!"<< std::endl;
+	else if (!isnumeric(phone))
+		std::cout << "Invalid phone number"<< std::endl;
 	phonenumber = phone;
 }
 void Contact::setdarkestsecret(std::string ds)
