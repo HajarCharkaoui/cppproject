@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/24 17:08:55 by hacharka          #+#    #+#             */
+/*   Updated: 2026/01/24 17:08:56 by hacharka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 
 int	main()
@@ -7,10 +19,10 @@ int	main()
 
 	while (1)
 	{
-		std::cout << "Enter your command: ";
-		if (!(std::getline(std::cin, cmnd)))
-			std::cout << "Error: The command doesn't be empty!" <<std::endl;
-		if (cmnd.compare("ADD") == 0)
+		cmnd = prompt("Enter your command: ");
+		if (std::cin.eof())
+			break;
+		else if (cmnd.compare("ADD") == 0)
 		{
 			phonebook.add_to_list();
 		}

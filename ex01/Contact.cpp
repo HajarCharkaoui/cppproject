@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/24 17:08:31 by hacharka          #+#    #+#             */
+/*   Updated: 2026/01/24 17:08:32 by hacharka         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 
 std::string Contact::getFirstname()
@@ -27,15 +39,15 @@ std::string Contact::getDarckestsecret()
 
 void Contact::setFirstname(std::string fname)
 {
-	firstname = fname;
+	this->firstname = fname;
 }
 void Contact::setLastname(std::string lname)
 {
-	lastname = lname;
+	this->lastname = lname;
 }
 void Contact::setNickname(std::string Nname)
 {
-	nickname = Nname;
+	this->nickname = Nname;
 }
 
 bool isnumeric(std::string str)
@@ -49,13 +61,9 @@ bool isnumeric(std::string str)
 }
 void Contact::setPhonenumber(std::string phone)
 {
-	if (phone.length() == 0)
-		std::cout << "empty fieled!"<< std::endl;
-	else if (!isnumeric(phone))
-		std::cout << "Invalid phone number"<< std::endl;
-	phonenumber = phone;
+	this->phonenumber = phone;
 }
 void Contact::setdarkestsecret(std::string ds)
 {
-	darkestsecret = ds;
+	this->darkestsecret = ds;
 }
