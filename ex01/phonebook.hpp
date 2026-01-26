@@ -6,7 +6,7 @@
 /*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:09:21 by hacharka          #+#    #+#             */
-/*   Updated: 2026/01/24 17:09:22 by hacharka         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:38:48 by hacharka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ class Phonebook
 		int		id;
 	public:
 		Phonebook();
-		Contact getContacts(int index);
-		int		getid();
+		Contact getContacts(int index) const;
+		int		getid() const;
 		void 	add_to_list();
 		void 	search();
 		void	display_contacts();
+		~Phonebook();
 };
 #endif

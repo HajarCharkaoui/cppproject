@@ -6,7 +6,7 @@
 /*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:08:55 by hacharka          #+#    #+#             */
-/*   Updated: 2026/01/24 17:08:56 by hacharka         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:46:43 by hacharka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main()
 
 	while (1)
 	{
-		cmnd = prompt("Enter your command: ");
+		cmnd = prompt("Enter your command: ADD ,SEARCH ,EXIT : ");
 		if (std::cin.eof())
 			break;
 		else if (cmnd.compare("ADD") == 0)

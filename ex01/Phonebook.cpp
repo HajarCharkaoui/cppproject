@@ -6,18 +6,18 @@
 /*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:09:16 by hacharka          #+#    #+#             */
-/*   Updated: 2026/01/24 17:09:17 by hacharka         ###   ########.fr       */
+/*   Updated: 2026/01/26 17:11:32 by hacharka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-Contact Phonebook::getContacts(int index)
+Contact Phonebook::getContacts(int index) const
 {
 	return contacts[index];
 }
 
-int	Phonebook::getid()
+int	Phonebook::getid() const
 {
 	return id;
 }
@@ -27,13 +27,18 @@ Phonebook::Phonebook()
 	this->id = 0;
 }
 
+Phonebook::~Phonebook()
+{
+	
+}
+
 std::string prompt(std::string question)
 {
 	std::string answer;
 
 	while(true)
 	{
-		std::cout << question;
+		std::cout << question ;
 		if (!(std::getline(std::cin, answer)))
 			break;
 		if (answer.empty())
@@ -51,24 +56,36 @@ std::string prompt(std::string question)
 	return "";
 }
 
+std::string	skipspaces(std::string str)
+{
+	int index = 0;
+
+	for (size_t i = 0; i < str.length(); i++)
+	{
+		if (isspace(str[i]))
+			index++;
+	}
+	return (str.substr(index, str.length()));
+}
+
 void Phonebook::add_to_list()
 {
 	Contact newcontact;
 	std::string input;
 
-	input = prompt("First name: ");
+	input = skipspaces(prompt("First name: "));
 	if (std::cin.eof()) return;
 	newcontact.setFirstname(input);
-	input = prompt("Last name: ");
+	input = skipspaces(prompt("Last name: "));
 	if (std::cin.eof()) return;
 	newcontact.setLastname(input);
-	input = prompt("Nick name: ");
+	input = skipspaces(prompt("Nick name: "));
 	if (std::cin.eof()) return;
 	newcontact.setNickname(input);
-	input = prompt("Phone number: ");
+	input = skipspaces(prompt("Phone number: "));
 	if (std::cin.eof()) return;
 	newcontact.setPhonenumber(input);
-	input = prompt("Darkestsecret: ");
+	input = skipspaces(prompt("Darkestsecret: "));
 	if (std::cin.eof()) return;
 	newcontact.setdarkestsecret(input);
 	std::cout << std::endl;
@@ -109,8 +126,13 @@ void Phonebook::search()
 {
 	display_contacts();
 	std::string input = prompt("Search for a specific contact: ");
+	if (!isnumeric(input))
+	{
+		std::cout << "Index should be a number" << std::endl;
+		return ;
+	}
+	
 	int index = std::atoi(input.c_str());
-
 	if (index >= 0 && index < id && index < 8)
 	{
 		std::cout << "First Name: " << contacts[index].getFirstname() << std::endl;
