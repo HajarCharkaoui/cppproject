@@ -6,7 +6,7 @@
 /*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:08:44 by hacharka          #+#    #+#             */
-/*   Updated: 2026/01/24 17:08:45 by hacharka         ###   ########.fr       */
+/*   Updated: 2026/01/26 18:40:17 by hacharka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ class Contact{
 		std::string	phonenumber;
 		std::string darkestsecret;
 	public:
-		std::string getFirstname();
-		std::string getLastname();
-		std::string getNickname();
-		std::string getPhonenumber();
-		std::string getDarckestsecret();
+		std::string getFirstname() const;
+		std::string getLastname()const;
+		std::string getNickname()const;
+		std::string getPhonenumber()const;
+		std::string getDarckestsecret()const;
 	
 		void setFirstname(std::string fname);
 		void setLastname(std::string lname);

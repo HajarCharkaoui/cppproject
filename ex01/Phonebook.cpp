@@ -6,7 +6,7 @@
 /*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:09:16 by hacharka          #+#    #+#             */
-/*   Updated: 2026/01/26 17:11:32 by hacharka         ###   ########.fr       */
+/*   Updated: 2026/02/06 17:08:09 by hacharka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,8 @@ void Phonebook::search()
 		std::cout << "First Name: " << contacts[index].getFirstname() << std::endl;
 		std::cout << "Last Name: " << contacts[index].getLastname() << std::endl;
 		std::cout << "Nick name: " << contacts[index].getNickname() << std::endl;
+		std::cout << "Phone number: " << contacts[index].getPhonenumber() << std::endl;
+		std::cout << "Darkestsecret: " << contacts[index].getDarckestsecret() << std::endl;
 		std::cout << std::endl;
 	}
 	else

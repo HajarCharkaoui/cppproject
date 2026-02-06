@@ -6,33 +6,33 @@
 /*   By: hacharka <hacharka@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 17:08:31 by hacharka          #+#    #+#             */
-/*   Updated: 2026/01/24 17:08:32 by hacharka         ###   ########.fr       */
+/*   Updated: 2026/02/06 14:49:31 by hacharka         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-std::string Contact::getFirstname()
+std::string Contact::getFirstname() const
 {
 	return firstname;
 }
 
-std::string Contact::getLastname()
+std::string Contact::getLastname() const
 {
 	return lastname;
 }
 
-std::string Contact::getNickname()
+std::string Contact::getNickname() const
 {
 	return nickname;
 }
 
-std::string Contact::getPhonenumber()
+std::string Contact::getPhonenumber() const
 {
 	return phonenumber;
 }
 
-std::string Contact::getDarckestsecret()
+std::string Contact::getDarckestsecret() const
 {
 	return darkestsecret;
 }
